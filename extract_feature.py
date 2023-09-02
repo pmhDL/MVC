@@ -62,7 +62,7 @@ parser = argparse.ArgumentParser()
 args.dataset_dir = datadir
 args.model_type = modeltype
 args = parser.parse_args()
-setname = 'train' #train  val  test
+setname = 'base' #base  val  novel
 dataset = DatasetLoader(setname, args)
 data_loader = torch.utils.data.DataLoader(dataset=dataset, batch_size=128,
                                           shuffle=False, num_workers=12, pin_memory=True)
