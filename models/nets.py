@@ -218,7 +218,7 @@ class Model(nn.Module):
             # p_x = torch.distributions.Normal(recX, torch.ones_like(recX))
             # loss_log = p_x.log_prob(datas).sum(-1).mean()
 
-            loss = loss_con + loss_kl - loss_rec
+            loss = loss_con + loss_kl + loss_rec
             optimizer1.zero_grad()
             loss.backward()
             optimizer1.step()
