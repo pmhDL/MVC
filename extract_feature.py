@@ -3,7 +3,7 @@ import argparse
 import numpy as np
 from models.res12 import Res12
 from models.wrn28 import Wrn28
-from dataloader.dataset_loader import DatasetLoader
+from dataloader.dataset_loaderE import DatasetLoader
 import os
 
 def extract_feature(data_loader, setname, model, savepath):
@@ -62,7 +62,7 @@ parser = argparse.ArgumentParser()
 args.dataset_dir = datadir
 args.model_type = modeltype
 args = parser.parse_args()
-setname = 'base' #base  val  novel
+setname = 'train' #train  val  test
 dataset = DatasetLoader(setname, args)
 data_loader = torch.utils.data.DataLoader(dataset=dataset, batch_size=128,
                                           shuffle=False, num_workers=12, pin_memory=True)
